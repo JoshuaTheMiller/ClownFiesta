@@ -2,7 +2,7 @@
 
 void Main()
 {
-	"I'm a test".Dump();	
+	"I'm a fart".Dump();	
 }
 
 // Define other methods and classes here
