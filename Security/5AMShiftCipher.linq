@@ -25,11 +25,11 @@ public static class CustomShiftCipher
 	// Lists all 26 possible solutions to shiftCipher in console
 	public static string ListSolutions(string encryptedString)
 	{
-		List<string> solutions = new List<string>();
+		
 		for (var i = 0; i < 26; i++)
 		{
-			solutions.Add(ShiftString(encryptedString, i));
-			Console.WriteLine(i + " " + solutions[i]);
+		
+			Console.WriteLine(i + " " + ShiftString(encryptedString, i));
 		}
 		return "";
 	}
