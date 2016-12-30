@@ -2,8 +2,10 @@
 
 void Main()
 {
-	var stringTest = "AaZz";
-	CustomShiftCipher.ShiftString(stringTest, 100).Dump();
+	var stringTest = "Hello";
+	var encryptedTest = "Mjqqt";
+	CustomShiftCipher.ShiftString(stringTest, -10);
+	CustomShiftCipher.ListSolutions(encryptedTest);
 }
 
 public static class CustomShiftCipher
@@ -20,10 +22,21 @@ public static class CustomShiftCipher
 		return shiftedString;
 	}
 	
+	// Lists all 26 possible solutions to shiftCipher in console
+	public static string ListSolutions(string encryptedString)
+	{
+		List<string> solutions = new List<string>();
+		for (var i = 0; i < 26; i++)
+		{
+			solutions.Add(ShiftString(encryptedString, i));
+			Console.WriteLine(i + " " + solutions[i]);
+		}
+		return "";
+	}
+	
 	private static char ShiftChar(char charToShift, int cipherKey)
 	{
 	    cipherKey %= 26;
-		cipherKey.Dump();
 		if(cipherKey < 0)
 		{
 		  	cipherKey += 26;
